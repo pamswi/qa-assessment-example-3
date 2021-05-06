@@ -70,14 +70,15 @@ def four(a, b):
 
 # For a or A, use z or Z respectively
 
-# Ignore punctuation or whitespace
+# Ignore characters that aren't in the alphabet, such as whitespace or numbers
 
 # <EXAMPLES>
 
 # five('wxyz') → 'vwxy'
 # five('abc') → 'zab'
 # five('aAbB') → 'zZaA'
-# five('hello world') == ''
+# five('hello world') → 'gdkkn vnqkc'
+# five('54321') → '54321'
 
 def five(string):
     pass
