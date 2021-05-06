@@ -29,3 +29,6 @@ def test_five():
     assert python2.five('abc') == 'zab'
     assert python2.five('aAbB') == 'zZaA'
     assert python2.five('abcabcABCABC') == 'zabzabZABZAB'
+    assert python2.five('hello world') == 'gdkkn vnqkc'
+    assert python2.five('54321') == '54321'
+    
