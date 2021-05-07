@@ -25,7 +25,7 @@ def test_four():
     assert python2.four(2, 2048) == 2
 
 def test_five():
-    assert python2.five('wxyz') == 'vwyz'
+    assert python2.five('wxyz') == 'vwxy'
     assert python2.five('abc') == 'zab'
     assert python2.five('aAbB') == 'zZaA'
     assert python2.five('abcabcABCABC') == 'zabzabZABZAB'
