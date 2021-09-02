@@ -11,11 +11,7 @@
 # one(['tic', 'tac', 'toe']) → {'tic':1, 'tac':1, 'toe':1}
     
 def one(items):
-    _dict = {}
-    for item in items:
-        number = items.count(item)
-        _dict[item] = number
-    return _dict
+    pass
 
 # <QUESTION 2>
 
@@ -32,10 +28,7 @@ def one(items):
 # two(-5, 2, '/') → -2.5
 
 def two(a, b, operator):
-    _dict = {'+':a+b, '-':a-b, '*':a*b, '/':a/b}
-    if operator == '/' and b == 0:
-        return "Cannot divide by 0!"
-    return _dict[operator]
+    pass
 
 # <QUESTION 3>
 
@@ -55,14 +48,7 @@ def two(a, b, operator):
 # We can use `x ** 0.5` to get the square root of `x`
 
 def three(num):
-    if (num ** 0.5) % 1 == 0:
-        return num
-    else:
-        ans = 0
-        for n in range(num):
-            if (n ** 0.5) % 1 == 0:
-                ans = n
-        return ans
+    pass
 
 # <QUESTION 4>
 
@@ -75,11 +61,7 @@ def three(num):
 # four(10, 50) → 10
 
 def four(a, b):
-    ans = 1
-    for n in range(1, min(a,b)+1):
-        if a % n == 0 and b % n == 0:
-            ans = n
-    return ans
+    pass
 
 # <QUESTION 5>
 
@@ -99,13 +81,4 @@ def four(a, b):
 # five('54321') → '54321'
 
 def five(string):
-    solution = ""
-    for char in string:
-        if char.isalpha() and char not in {'a', 'A'}:
-            solution += chr(ord(char)-1)
-        elif char.isalpha() and char in {'a', 'A'}:
-            _dict = {'a':'z', 'A':'Z'}
-            solution += _dict[char]
-        else:
-            solution += char
-    return solution
+    pass
