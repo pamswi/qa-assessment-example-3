@@ -4,14 +4,15 @@
 # of times they appear in the list
 
 # Note: the order of this dictionary does not matter
-
-# <EXAMPLES>
-
-# one(['apple', 'banana', 'orange', 'orange', 'apple', 'apple']) → {'apple':3, 'orange':2, 'banana':1}
-# one(['tic', 'tac', 'toe']) → {'tic':1, 'tac':1, 'toe':1}
     
 def one(items):
-    pass
+
+    new_dict = {}
+
+    for item in items:
+        count = items.count(item)
+        new_dict[item]=count
+    return(new_dict)
 
 # <QUESTION 2>
 
@@ -20,15 +21,16 @@ def one(items):
 
 # The operator will be a string, and will only be +, -, *, or /. 
 
-# <EXAMPLES>
-
-# two(2, 4, '+') → 6
-# two(7, 3, '-') → 4
-# two(3, 1.5, '*') → 4.5
-# two(-5, 2, '/') → -2.5
-
 def two(a, b, operator):
-    pass
+    if operator == "+":
+        c = a + b
+    elif operator == "-":
+        c = a - b
+    elif operator == "*":
+        c = a * b
+    elif operator == "/":
+        c = a / b
+    return c
 
 # <QUESTION 3>
 
@@ -37,31 +39,32 @@ def two(a, b, operator):
 
 # If the number has a square root, just return the number
 
-# <EXAMPLES>
-
-# three(7) → 4          # 4 is the square of 2
-# three(64) → 64        # 64 is the square of 8 already
-# three(32) → 25
-
 # <HINT>
 
 # We can use `x ** 0.5` to get the square root of `x`
 
 def three(num):
-    pass
+
+    sqrt_num= num ** 0.5
+
+    if sqrt_num.is_integer():
+        return num
+    else:
+        y = int(sqrt_num) ** 2
+        return y
+
+
 
 # <QUESTION 4>
 
 # Given two integers, return the greatest common factor of the two numbers
 
-# <EXAMPLES>
 
-# four(32, 24) → 8
-# four(18, 11) → 1
-# four(10, 50) → 10
+import math
 
 def four(a, b):
-    pass
+    return math.gcd(a, b)
+    
 
 # <QUESTION 5>
 
@@ -72,13 +75,55 @@ def four(a, b):
 
 # Ignore characters that aren't in the alphabet, such as whitespace or numbers
 
-# <EXAMPLES>
-
-# five('wxyz') → 'vwxy'
-# five('abc') → 'zab'
-# five('aAbB') → 'zZaA'
-# five('hello world') → 'gdkkn vnqkc'
-# five('54321') → '54321'
-
 def five(string):
-    pass
+    reverted_word = ""
+
+    # iterates over each char in a string
+    for char in string:
+        # checks if char is alphabetic & if upper or lower case
+        if char.isalpha():
+            is_upper = char.isupper()
+            char_lower = char.lower()
+            # finds the new value of the ascii alphabet
+            ascii_char = ord(char_lower) - 1
+            # handles upper and lower case letters
+            if char_lower == 'a':
+                ascii_char = ord('z')
+            if is_upper:
+                reverted_word += chr(ascii_char).upper()
+            else:
+                reverted_word += chr(ascii_char)
+        else:
+            reverted_word += char
+
+    return reverted_word
+
+
+
+
+# question 1 tests
+# print(one(['apple', 'banana', 'orange', 'orange', 'apple', 'apple'])) # → {'apple':3, 'orange':2, 'banana':1}
+# print(one(['tic', 'tac', 'toe'])) # → {'tic':1, 'tac':1, 'toe':1}
+
+# question 2 tests
+# print(two(2, 4, '+')) # → 6
+# print(two(7, 3, '-')) # → 4
+# print(two(3, 1.5, '*')) #→ 4.5
+# print(two(-5, 2, '/')) # → -2.5
+
+# questions 3 tests
+# print(three(7)) #→ 4          # 4 is the square of 2
+# print(three(64)) # → 64        # 64 is the square of 8 already
+# print(three(32)) # → 25
+
+# question 4 tests
+# print(four(32, 24)) # → 8
+# print(four(18, 11)) # → 1
+# print(four(10, 50)) # → 10
+
+# question 5 tests
+print(five('wxyz')) # → 'vwxy'
+print(five('abc')) # → 'zab'
+print(five('aAbB')) # → 'zZaA'
+print(five('hello world')) # → 'gdkkn vnqkc'
+print(five('54321')) # → '54321'
